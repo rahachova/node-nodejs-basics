@@ -1,5 +1,12 @@
+import { argv } from "process";
+
 const parseArgs = () => {
-    // Write your code here 
+  const [execPath, execFile, ...args] = argv;
+  args.forEach((value, index) => {
+    if (index % 2 === 0) {
+      console.log(`${value} is ${args[index + 1]}`);
+    }
+  });
 };
 
 parseArgs();
